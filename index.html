@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For my love🫠❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ff9ecf, #ffc3e6, #ff6fb5);
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: #fff;
+      text-align: center;
+    }.center-screen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px 20px 80px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  white-space: pre-line;
+  margin-bottom: 40px;
+}
+
+.btn {
+  padding: 16px 32px;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 50px;
+  background: #ff4fa3;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(255, 79, 163, 0.9);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.hidden {
+  display: none;
+}
+
+.heart {
+  position: fixed;
+  color: #ff2e88;
+  font-size: 24px;
+  animation: floatUp 3s linear forwards;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.emoji-pop {
+  position: fixed;
+  font-size: 26px;
+  animation: floatUp 3s linear forwards;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.big-love {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 20px rgba(255,255,255,0.9);
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.big-love.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes floatUp {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-220px) scale(1.6); }
+}
+
+  </style>
+</head>
+<body>  <!-- FIRST SCREEN -->  <div id="startScreen" class="center-screen">
+    <button class="btn" onclick="startLove()">click me jaanu🎀😳</button>
+  </div>  <!-- MAIN PAGE -->  <div id="mainPage" class="container hidden">
+    <h1>For my love🫠❤️</h1>
+    <p>
+Hieee babieee!!👉🏻👈🏻Umm...this is for you my love(am new to this kinda stuff so just don't complain that it's too bad or anything please 🙂)
+
+So ik the past few days weren't any easy for both of us...we were both mad at eachother, got frustrated and maybe we both felt a little tired of eachother.
+
+See these type of phrases, they come and go but we are forever!!❤️
+
+Just don't ever stop loving me and please don't treat me like am the problem for everything... Ik am hard to deal with but I really love you!! If you go on to treat me like this, I'll be dead inside🫠
+
+You know right now I feel that am the reason for all your problems, your poor exam result, no social life and just everything... I sometimes blame myself to be here, to ruin your life... See we both choose to be with  eachother and our life drastically changed after we met There are many changes in the lifestyle of both of us good or bad... In my life too there are my things that got worse because of just being here... My academics dropped, my room was taken for me, I don't get enough allowance as I used to get. But all these stuff, am not blaming you for them it's not your mistake, I choose to be with you and am happy about it, nothing else matters to me!! But on the other hand you make me feel like i am the problem and if I really am then just tell me to leave already I don't wanna ruin your life... Right now you make me feel like i am the bad person I am the problem but you're so attached that you can't leave me I don't feel loved I just feel like a burden...
+
+At the end i just wanna say that i love you and am never leaving untill you want me too dont worry about me leaving or anything like that am jab tak aap chaho meri jaan🫠 I love you soo muchh!!❤️ </p>
+
+<button class="btn" onclick="finalLove()">i love you ❤️</button>
+
+  </div>  <div id="bigLove" class="big-love">I LOVE YOU ❤️</div>  <script>
+    function startLove() {
+      for (let i = 0; i < 35; i++) {
+        const heart = document.createElement("div");
+        heart.innerHTML = "❤";
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = Math.random() * 100 + "vh";
+        heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 3000);
+      }
+
+      document.getElementById("startScreen").classList.add("hidden");
+      document.getElementById("mainPage").classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function finalLove() {
+      // show big text
+      document.getElementById("bigLove").classList.add("show");
+
+      // continuous emoji pop for ~5 sec
+      let count = 0;
+      const interval = setInterval(() => {
+        const emoji = document.createElement("div");
+        emoji.className = "emoji-pop";
+        emoji.innerHTML = Math.random() > 0.5 ? "🎀" : "💗";
+        emoji.style.left = Math.random() * 100 + "vw";
+        emoji.style.top = Math.random() * 100 + "vh";
+        document.body.appendChild(emoji);
+        setTimeout(() => emoji.remove(), 3000);
+
+        count++;
+        if (count > 40) clearInterval(interval);
+      }, 120);
+    }
+  </script></body>
+</html>
